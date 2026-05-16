@@ -7,6 +7,8 @@ import fs from "fs";
 
 import authRoutes from "./routers/authRoutes.js"
 import movieRoutes from "./routers/movieRoutes.js"
+import watchListRoutes from "./routers/watchListRoutes.js";
+
 const app = express();
 
 app.use(express.json());
@@ -16,6 +18,7 @@ const swaggerDocument = JSON.parse(fs.readFileSync("./swagger-output.json", "utf
 app.use("/api-docs", swaggerui.serve, swaggerui.setup(swaggerDocument));
 app.use("/movies", movieRoutes);
 app.use("/auth", authRoutes);
+app.use("/watchlist", watchListRoutes);
 
 const PORT = 5001;
 const server = app.listen(PORT, () =>{

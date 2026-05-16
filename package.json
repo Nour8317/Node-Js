@@ -36,5 +36,9 @@
     "prisma": "^6.19.3",
     "swagger-autogen": "^2.23.7",
     "tsx": "^4.22.0"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma",
+    "seed": "./prisma/seed.js"
   }
 }

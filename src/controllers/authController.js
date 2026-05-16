@@ -43,10 +43,21 @@ const login = async (req, res) =>{
     if(!isMatch){
         return res.status(400).json({message: "Invalid credentials"});
     }
-    const token = await generateToken(user.id);
+    const token = await generateToken(user.id, res);
     res.status(200).json({message: "Login successful", user: {id: user.id, name: user.name, email: user.email}, token});
 }
+
+const logout = (req, res) =>{
+    res.clearCookie("jwt", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "strict"
+    });
+    res.status(200).json({message: "Logout successful"});
+}
+
 export {
     register,
-    login
+    login,
+    logout
 };
