@@ -1,5 +1,44 @@
 {
+  "name": "node-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nour8317/Node-Js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Nour8317/Node-Js/issues"
+  },
+  "homepage": "https://github.com/Nour8317/Node-Js#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "bcryptjs": "^3.0.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^6.19.3",
+    "@prisma/config": "^7.8.0",
+    "@types/bcryptjs": "^2.4.6",
+    "dotenv": "^17.4.2",
+    "nodemon": "^3.1.14",
+    "pg": "^8.20.0",
+    "prisma": "^6.19.3",
+    "swagger-autogen": "^2.23.7",
+    "tsx": "^4.22.0"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma",
+    "seed": "./prisma/seed.js"
   }
 }
